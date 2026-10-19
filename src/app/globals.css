@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Add to app/globals.css (Tailwind v4) */
+
+@theme {
+  --color-brand-red: #b3121b;
+  --color-brand-red-dark: #8e0e15;
+  --color-brand-gold: #f0a81c;
+  --color-brand-leaf: #3f8f3c;
+  --color-brand-ink: #1b1b1b;
+  --color-brand-cream: #fff8ec;
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ------------------------------------------------------------------
+   app/layout.tsx: load the font (matches the logo's bold geometric look)
+
+   import { Montserrat } from "next/font/google";
+   const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
+
+   <body className={`${montserrat.variable} antialiased`}>
+------------------------------------------------------------------- */
