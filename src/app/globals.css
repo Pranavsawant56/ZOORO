@@ -1,38 +1,46 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------
+   ZOORO brand palette — the single source of truth for colour.
+   Change a value here and every place that uses it updates.
+
+   Use in markup:   bg-brand-red, text-brand-ink, border-brand-gold …
+   Use in CSS/SVG:  var(--brand-red), var(--brand-cream) …
+------------------------------------------------------------------ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-red: #b3121b;
+  --brand-red-dark: #8e0e15;
+  --brand-red-light: #d8322a;
+  --brand-gold: #f0a81c;
+  --brand-leaf: #3f8f3c;
+  --brand-leaf-light: #6db544;
+  --brand-leaf-dark: #2c7a33;
+  --brand-leaf-mist: #e8f5e0;
+  --brand-ink: #1b1b1b;
+  --brand-cream: #fff8ec;
+
+  --background: var(--brand-cream);
+  --foreground: var(--brand-ink);
 }
 
+/* Expose the palette to Tailwind's utilities. */
 @theme inline {
+  --color-brand-red: var(--brand-red);
+  --color-brand-red-dark: var(--brand-red-dark);
+  --color-brand-red-light: var(--brand-red-light);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-leaf: var(--brand-leaf);
+  --color-brand-leaf-light: var(--brand-leaf-light);
+  --color-brand-leaf-dark: var(--brand-leaf-dark);
+  --color-brand-leaf-mist: var(--brand-leaf-mist);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-cream: var(--brand-cream);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-/* Add to app/globals.css (Tailwind v4) */
-
-@theme {
-  --color-brand-red: #b3121b;
-  --color-brand-red-dark: #8e0e15;
-  --color-brand-gold: #f0a81c;
-  --color-brand-leaf: #3f8f3c;
-  --color-brand-ink: #1b1b1b;
-  --color-brand-cream: #fff8ec;
   --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -46,11 +54,8 @@ html {
   }
 }
 
-/* ------------------------------------------------------------------
-   app/layout.tsx: load the font (matches the logo's bold geometric look)
-
-   import { Montserrat } from "next/font/google";
-   const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
-
-   <body className={`${montserrat.variable} antialiased`}>
-------------------------------------------------------------------- */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}

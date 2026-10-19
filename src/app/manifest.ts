@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { brand } from "@/lib/brand";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -8,8 +9,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Corporate canteens, industrial catering, festival and occasion meals, events and healthy meal plans.",
     start_url: "/",
     display: "standalone",
-    background_color: "#fff8ec",
-    theme_color: "#b3121b",
+    background_color: brand.cream,
+    theme_color: brand.red,
     icons: [
       { src: "/icon-192.png", sizes: "192x192", type: "image/png" },
       {

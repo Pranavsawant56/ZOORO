@@ -70,29 +70,29 @@ function Emblem() {
       <svg viewBox="0 0 400 400" className="h-full w-full" role="img" aria-label="ZOORO emblem">
         <defs>
           <linearGradient id="zg" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#F0A81C" />
-            <stop offset="0.55" stopColor="#D8322A" />
-            <stop offset="1" stopColor="#8E0E15" />
+            <stop offset="0" stopColor="var(--brand-gold)" />
+            <stop offset="0.55" stopColor="var(--brand-red-light)" />
+            <stop offset="1" stopColor="var(--brand-red-dark)" />
           </linearGradient>
           <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#6DB544" />
-            <stop offset="1" stopColor="#2C7A33" />
+            <stop offset="0" stopColor="var(--brand-leaf-light)" />
+            <stop offset="1" stopColor="var(--brand-leaf-dark)" />
           </linearGradient>
         </defs>
 
         <circle cx="200" cy="200" r="178" fill="#fff" />
-        <motion.circle cx="200" cy="200" r="178" fill="none" stroke="#B3121B" strokeWidth="10" strokeLinecap="round" strokeDasharray="1 0" {...draw(0.1)} />
-        <motion.circle cx="200" cy="200" r="150" fill="none" stroke="#F0A81C" strokeWidth="5" strokeLinecap="round" {...draw(0.4)} />
+        <motion.circle cx="200" cy="200" r="178" fill="none" stroke="var(--brand-red)" strokeWidth="10" strokeLinecap="round" strokeDasharray="1 0" {...draw(0.1)} />
+        <motion.circle cx="200" cy="200" r="150" fill="none" stroke="var(--brand-gold)" strokeWidth="5" strokeLinecap="round" {...draw(0.4)} />
 
         {/* Z */}
         <motion.path d="M118 130 H270 L130 270 H282" fill="none" stroke="url(#zg)" strokeWidth="34" strokeLinecap="round" strokeLinejoin="round" {...draw(0.7)} />
 
         {/* fork */}
-        <motion.g stroke="#F0A81C" strokeWidth="6" strokeLinecap="round" fill="none" {...draw(1.3)}>
+        <motion.g stroke="var(--brand-gold)" strokeWidth="6" strokeLinecap="round" fill="none" {...draw(1.3)}>
           <path d="M92 250 V210 M102 250 V210 M112 250 V210 M92 250 Q102 262 112 250 M102 262 V318" />
         </motion.g>
         {/* spoon */}
-        <motion.g {...draw(1.4)} stroke="#B3121B" strokeWidth="6" strokeLinecap="round" fill="none">
+        <motion.g {...draw(1.4)} stroke="var(--brand-red)" strokeWidth="6" strokeLinecap="round" fill="none">
           <ellipse cx="300" cy="218" rx="13" ry="20" />
           <path d="M300 238 V318" />
         </motion.g>
@@ -106,7 +106,7 @@ function Emblem() {
           style={{ transformOrigin: "268px 140px" }}
           transition={{ duration: 0.9, delay: 1.7, ease }}
         />
-        <path d="M274 130 C292 112 308 100 326 92" stroke="#E8F5E0" strokeWidth="3" fill="none" strokeLinecap="round" />
+        <path d="M274 130 C292 112 308 100 326 92" stroke="var(--brand-leaf-mist)" strokeWidth="3" fill="none" strokeLinecap="round" />
       </svg>
     </motion.div>
   );
