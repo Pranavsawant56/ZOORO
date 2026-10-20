@@ -64,7 +64,7 @@ export async function POST(request: Request) {
       ["Message", message],
     ];
 
-    await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: "ZOORO Website <onboarding@resend.dev>",
       to: NOTIFY_EMAIL,
       replyTo: email,
@@ -82,6 +82,8 @@ export async function POST(request: Request) {
         </table>
       `,
     });
+    // Resend reports failures in the return value instead of throwing.
+    if (error) throw error;
   } catch (err) {
     console.error("Failed to send enquiry email:", err);
     return NextResponse.json(
